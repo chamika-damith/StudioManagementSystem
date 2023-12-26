@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashboardRoot" prefHeight="700.0" prefWidth="1330.0" style="-fx-background-color: #D3D5DA;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Dashboard.DashboardWindwoCrontroller">
+   <children>
+      <Pane layoutX="54.0" layoutY="21.0" prefHeight="125.0" prefWidth="256.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 15;">
+         <children>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="29.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Icon/trolley.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="22.0" layoutY="71.0" opacity="0.7" text="Total Orders">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblOrders" layoutX="146.0" layoutY="29.0" prefHeight="45.0" prefWidth="60.0">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="371.0" layoutY="15.0" prefHeight="126.0" prefWidth="256.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 15;">
+         <children>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="31.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Icon/tag.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="23.0" layoutY="72.0" opacity="0.7" text="Total Sales">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAllInventory" layoutX="117.0" layoutY="41.0" prefHeight="40.0" prefWidth="132.0">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAllInventory1" layoutX="99.0" layoutY="61.0" prefHeight="22.0" prefWidth="18.0" text="Rs" textAlignment="RIGHT" />
+         </children>
+      </Pane>
+      <Pane layoutX="688.0" layoutY="15.0" prefHeight="126.0" prefWidth="256.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 15;">
+         <children>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="36.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Icon/chart.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="23.0" layoutY="71.0" opacity="0.7" text="Total Customers">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAllCustomerd" layoutX="163.0" layoutY="27.0" prefHeight="45.0" prefWidth="60.0">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="1006.0" layoutY="15.0" prefHeight="126.0" prefWidth="256.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 15;">
+         <children>
+            <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="35.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Icon/booking.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="21.0" layoutY="71.0" opacity="0.7" text="Active Booking">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEmpId" layoutX="163.0" layoutY="27.0" prefHeight="45.0" prefWidth="60.0">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="6.0" layoutY="157.0" prefHeight="238.0" prefWidth="1310.0" style="-fx-background-radius: 15; -fx-background-color: FFFFFF;">
+         <children>
+            <Label layoutX="26.0" layoutY="7.0" opacity="0.62" text="Total sales" textFill="#2fae9b">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <LineChart fx:id="Linechart" layoutY="29.0" prefHeight="209.0" prefWidth="1238.0" stylesheets="@../../Style/chart.css">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis prefHeight="312.0" prefWidth="28.0" side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="410.0" prefHeight="276.0" prefWidth="1310.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 13;">
+         <children>
+            <Label layoutX="27.0" layoutY="14.0" opacity="0.63" text="Today Booking" textFill="#2fae9b">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Pane layoutX="1040.0" layoutY="12.0" prefHeight="40.0" prefWidth="236.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 7;">
+               <children>
+                  <JFXTextField fx:id="txtSearchOrder" focusColor="#0040ff" labelFloat="true" layoutX="35.0" layoutY="6.0" prefHeight="25.0" prefWidth="188.0" promptText="Search by Booking Id or Customer Name">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </JFXTextField>
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="9.0" layoutY="11.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Icon/search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <TableView fx:id="tblAppointment" layoutX="18.0" layoutY="52.0" prefHeight="219.0" prefWidth="1274.0" stylesheets="@../../Style/Table.css">
+               <columns>
+                  <TableColumn fx:id="colBookingId" prefWidth="83.99999618530273" text="Booking Id" />
+                  <TableColumn fx:id="colName" prefWidth="173.59999084472656" text="Customer Name" />
+                  <TableColumn fx:id="colAddress" prefWidth="245.5999755859375" text="Address" />
+                  <TableColumn fx:id="colEmail" minWidth="0.0" prefWidth="237.5999755859375" text="Email" />
+                  <TableColumn fx:id="colMobile" prefWidth="210.39996337890625" text="Mobile" />
+                  <TableColumn fx:id="colComplete" prefWidth="83.19989013671875" text="Complete" />
+                  <TableColumn fx:id="colNotComplete" prefWidth="81.5999755859375" text="Cancel" />
+                  <TableColumn fx:id="colMore" prefWidth="92.7999267578125" text="More Details" />
+                  <TableColumn fx:id="colStatus" prefWidth="62.400146484375" text="Status" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

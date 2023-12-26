@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="orderItemDetailRoot" prefHeight="472.0" prefWidth="1013.0" style="-fx-background-color: #D3D5DA; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Order.OrderItemDetailFormController">
+   <children>
+      <Pane layoutX="19.0" layoutY="66.0" prefHeight="390.0" prefWidth="982.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 13;">
+         <children>
+            <Label layoutX="26.0" layoutY="12.0" opacity="0.9" text="View Items" textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblOrderItems" layoutX="14.0" layoutY="44.0" prefHeight="341.0" prefWidth="962.0" stylesheets="@../../Style/Table.css">
+               <columns>
+                  <TableColumn fx:id="colItemId" prefWidth="74.39999008178711" text="Item Id" />
+                  <TableColumn fx:id="colDescription" prefWidth="281.6000213623047" text="Description" />
+                  <TableColumn fx:id="colName" minWidth="0.0" prefWidth="171.199951171875" text="Name" />
+                  <TableColumn fx:id="colPrice" prefWidth="100.00006103515625" text="Price" />
+                  <TableColumn fx:id="colCategory" prefWidth="127.20001220703125" text="Category" />
+                  <TableColumn fx:id="colQty" prefWidth="65.5999755859375" text="Qty" />
+                  <TableColumn fx:id="colImg" prefWidth="139.199951171875" text="Image" />
+               </columns>
+            </TableView>
+            <Pane layoutX="737.0" layoutY="4.0" prefHeight="40.0" prefWidth="236.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 7;">
+               <children>
+                  <JFXTextField focusColor="#0040ff" layoutX="35.0" layoutY="6.0" prefHeight="25.0" prefWidth="188.0" promptText="Search by Item Id">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </JFXTextField>
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="9.0" layoutY="11.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Icon/search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Label layoutX="25.0" layoutY="12.0" text="Order Id - " textFill="#22a390">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderId" layoutX="105.0" layoutY="11.0" prefHeight="28.0" prefWidth="70.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="441.0" layoutY="12.0" opacity="0.9" text="Total = " textFill="#22a390">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" layoutX="504.0" layoutY="11.0" prefHeight="28.0" prefWidth="92.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="207.0" layoutY="13.0" text="Order Date - " textFill="#22a390">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderDate" layoutX="306.0" layoutY="12.0" prefHeight="28.0" prefWidth="116.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="BookingPayRoot" prefHeight="242.0" prefWidth="400.0" style="-fx-background-color: #D3D5DA; -fx-background-radius: 7;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Booking.BookingPaymentFormController">
+   <children>
+      <Label layoutX="33.0" layoutY="92.0" text="Total Amount">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtTotal" layoutX="164.0" layoutY="76.0" prefHeight="34.0" prefWidth="178.0" />
+      <Label layoutX="138.0" layoutY="2.0" style="-fx-background-color: 2D9596;" text="Booking Payment" textFill="#2d9596" underline="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="167.0" layoutY="179.0" onAction="#btnPay" prefHeight="28.0" prefWidth="91.0" style="-fx-background-color: #5D9C59; -fx-background-radius: 13;" text="Pay" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9892328398384924">
+                     <color>
+                        <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+   </children>
+</AnchorPane>

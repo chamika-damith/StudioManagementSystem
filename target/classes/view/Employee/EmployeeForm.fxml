@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="EmployeeRoot" prefHeight="700.0" prefWidth="1330.0" style="-fx-background-color: #D3D5DA; -fx-border-radius: 4;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Employee.EmployeeFormController">
+   <children>
+      <JFXButton buttonType="RAISED" layoutX="18.0" layoutY="14.0" prefHeight="28.0" prefWidth="124.0" style="-fx-background-color: #4A86E4; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Employee Details" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.16470588743686676" green="0.7803921699523926" blue="0.615686297416687" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="166.0" layoutY="14.0" prefHeight="28.0" prefWidth="124.0" style="-fx-background-color: #618264; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Make Attendance" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9892328398384924">
+                     <color>
+                        <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </JFXButton>
+      <Pane layoutX="25.0" layoutY="56.0" prefHeight="247.0" prefWidth="1290.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 13;">
+         <children>
+            <Label layoutX="27.0" layoutY="12.0" opacity="0.9" text="Employee Details" textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtEmpId" focusColor="#0040ff" labelFloat="true" layoutX="29.0" layoutY="63.0" onAction="#lblSearchOnAction" prefHeight="25.0" prefWidth="285.0" promptText="Employee Id *" />
+            <JFXTextField fx:id="txtName" focusColor="#0040ff" labelFloat="true" layoutX="991.0" layoutY="63.0" prefHeight="25.0" prefWidth="285.0" promptText="Name *" />
+            <JFXTextField fx:id="txtAddress" focusColor="#0040ff" labelFloat="true" layoutX="673.0" layoutY="63.0" prefHeight="25.0" prefWidth="285.0" promptText="Address *" />
+            <JFXTextField fx:id="txtEmail" focusColor="#0040ff" labelFloat="true" layoutX="289.0" layoutY="142.0" prefHeight="25.0" prefWidth="285.0" promptText="Email *" />
+            <JFXTextField fx:id="txtSalary" focusColor="#0040ff" labelFloat="true" layoutX="709.0" layoutY="143.0" prefHeight="25.0" prefWidth="285.0" promptText="Salary *" />
+            <JFXComboBox fx:id="comboBox" labelFloat="true" layoutX="351.0" layoutY="63.0" prefHeight="25.0" prefWidth="285.0" promptText="Type" style="-fx-background-radius: 10;" />
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="513.0" layoutY="199.0" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #5D9C59; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9892328398384924">
+                           <color>
+                              <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="686.0" layoutY="199.0" onAction="#btnEmpUpadateOnAction" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #E7B10A; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9892328398384924">
+                           <color>
+                              <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+            <Label layoutX="1113.0" layoutY="10.0" opacity="0.9" text="Employee ID : " textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblempId" layoutX="1220.0" layoutY="3.0" prefHeight="40.0" prefWidth="63.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="27.0" layoutY="328.0" prefHeight="358.0" prefWidth="1290.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 13;">
+         <children>
+            <Label layoutX="27.0" layoutY="12.0" opacity="0.9" text="View Employee" textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblEmployee" layoutX="14.0" layoutY="58.0" prefHeight="292.0" prefWidth="1264.0" stylesheets="@../../Style/Table.css">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="73.59997177124023" text="Id" />
+                <TableColumn fx:id="colName" prefWidth="212.00001525878906" text="Name" />
+                  <TableColumn fx:id="colAddress" prefWidth="281.5999755859375" text="Address" />
+                  <TableColumn fx:id="colEmail" prefWidth="262.3999938964844" text="Email" />
+                  <TableColumn fx:id="colSalary" prefWidth="160.00003051757812" text="Salary" />
+                  <TableColumn fx:id="colType" prefWidth="173.59991455078125" text="Position" />
+                  <TableColumn fx:id="Action" prefWidth="98.39996337890625" text="Action" />
+              </columns>
+            </TableView>
+            <Pane layoutX="1040.0" layoutY="20.0" prefHeight="40.0" prefWidth="236.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 7;">
+               <children>
+                  <JFXTextField focusColor="#0040ff" labelFloat="true" layoutX="35.0" layoutY="6.0" prefHeight="25.0" prefWidth="188.0" promptText="Search by Employee Id or Name">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </JFXTextField>
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="9.0" layoutY="11.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Icon/search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Label layoutX="1228.0" layoutY="14.0" opacity="0.9" text="Employee" textFill="#22a390" underline="true">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

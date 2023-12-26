@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="viewInventoryRoot" prefHeight="700.0" prefWidth="1330.0" style="-fx-background-color: #D3D5DA; -fx-background-radius: 4;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Inventory.ViewInventoryOrderDetailController">
+   <children>
+      <Pane layoutX="10.0" layoutY="60.0" prefHeight="630.0" prefWidth="1310.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 13;">
+         <children>
+            <Label layoutX="27.0" layoutY="14.0" opacity="0.9" text="View Orders" textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblOrder" layoutX="14.0" layoutY="58.0" prefHeight="610.0" prefWidth="1274.0" stylesheets="@../../Style/Table.css">
+               <columns>
+                  <TableColumn fx:id="colOrderId" prefWidth="89.60003662109375" text="Order Id" />
+                  <TableColumn fx:id="colName" prefWidth="253.59998321533203" text="Supplier Name" />
+                  <TableColumn fx:id="colAddress" prefWidth="327.1999816894531" text="Address" />
+                  <TableColumn fx:id="colCategory" minWidth="0.0" prefWidth="236.0" text="Category" />
+                  <TableColumn fx:id="colMobile" prefWidth="217.60009765625" text="Mobile" />
+                  <TableColumn fx:id="colMore" prefWidth="146.39990234375" text="More Details" />
+               </columns>
+            </TableView>
+            <Pane layoutX="1040.0" layoutY="12.0" prefHeight="40.0" prefWidth="236.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 7;">
+               <children>
+                  <JFXTextField fx:id="txtSearchBar" focusColor="#0040ff" labelFloat="true" layoutX="35.0" layoutY="6.0" prefHeight="25.0" prefWidth="188.0" promptText="Search by Order Id or Supplier Name">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </JFXTextField>
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="9.0" layoutY="11.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Icon/search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="17.0" onAction="#btnInventoryDetails" prefHeight="28.0" prefWidth="124.0" style="-fx-background-color: #4A86E4; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Inventory Details" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.16470588743686676" green="0.7803921699523926" blue="0.615686297416687" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="193.0" layoutY="17.0" onAction="#btnInventoryOrder" prefHeight="28.0" prefWidth="124.0" style="-fx-background-color: #618264; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Inventory Order" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9892328398384924">
+                     <color>
+                        <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="349.0" layoutY="17.0" onAction="#btnViewOrderDetail" prefHeight="28.0" prefWidth="124.0" style="-fx-background-color: CE5A67; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="View Order Details" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9892328398384924">
+                     <color>
+                        <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

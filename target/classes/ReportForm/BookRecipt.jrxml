@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BookRecipt" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c098e451-9298-48b4-88fe-221b662a49cd">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="project"/>
+	<parameter name="BookId" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT b.bookingId,p.name,p.price,SUM(p.price) OVER () AS total_price_for_all_bookings FROM booking b JOIN packages p on b.packageId = p.packageId where b.bookingId=$P{BookId} GROUP BY b.bookingId ORDER BY b.bookingId ASC;]]>
+	</queryString>
+	<field name="bookingId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="bookingId"/>
+		<property name="com.jaspersoft.studio.field.label" value="bookingId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="packages"/>
+	</field>
+	<field name="price" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="price"/>
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="packages"/>
+	</field>
+	<field name="total_price_for_all_bookings" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="total_price_for_all_bookings"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_price_for_all_bookings"/>
+	</field>
+	<group name="bookingId">
+		<groupExpression><![CDATA[$F{bookingId}]]></groupExpression>
+	</group>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<group name="price">
+		<groupExpression><![CDATA[$F{price}]]></groupExpression>
+	</group>
+	<group name="total_price_for_all_bookings">
+		<groupExpression><![CDATA[$F{total_price_for_all_bookings}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="106" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="80" height="80" uuid="d4f77b59-ab60-426b-b230-f8418928b94f"/>
+				<imageExpression><![CDATA["C:/Users/Chamika/Downloads/photography logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="89" y="-1" width="251" height="30" forecolor="#41A39B" uuid="866eb66c-d6c4-4bc1-8446-ccdfa6f71581"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOCUS PHOTOGRAPHY STUDIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="31" width="136" height="18" forecolor="#41A39B" uuid="a2ac66ce-3eab-4b32-97e6-c198987bb60b"/>
+				<text><![CDATA[NO: 173/1 , Perera Mawatha,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="49" width="136" height="20" forecolor="#41A39B" uuid="785f94e2-3ffa-48a4-8626-055c766daf49"/>
+				<text><![CDATA[Anuradhapura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="68" width="124" height="14" forecolor="#41A39B" uuid="44043b8c-c05f-4049-aef6-6a1ff0fd59be"/>
+				<text><![CDATA[focusstudio@gmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="100" height="30" forecolor="#41A39B" uuid="3598a1f0-48d2-425d-96a2-946351e906bf"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="41" width="48" height="14" uuid="9e23fbd4-1fca-4229-aed2-66a0c1b997fa"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="440" y="40" width="100" height="16" uuid="1696d2b8-777c-4747-a1a4-b6aa211fedfc"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="2" width="100" height="30" uuid="4a6834ce-cf3b-45a7-922a-ad59d32bdff0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="6" width="196" height="30" uuid="e2675d38-9935-4019-90ad-ee141d8cc763">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dc8ea5f4-f4ec-49bb-b230-4fbb46026901"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Package]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="6" width="158" height="30" uuid="070559ff-469c-427d-8777-c6a541e46a79">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="60d764d4-acb4-4dc7-991c-e34349d88785"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<line>
+				<reportElement x="28" y="37" width="519" height="1" uuid="bc074837-06ae-4a71-8ed9-0bf8b6cc194e"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="7" width="170" height="20" uuid="7361e5ce-c3c5-4fe2-9dfd-34a1bbd32000">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{BookId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="7" width="196" height="20" uuid="ca13e43c-26d4-43be-90d6-3fc1383def56">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dc8ea5f4-f4ec-49bb-b230-4fbb46026901"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="7" width="158" height="20" uuid="252e539c-919b-4360-92eb-4bd4088516e7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="60d764d4-acb4-4dc7-991c-e34349d88785"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="52" splitType="Stretch">
+			<line>
+				<reportElement x="18" y="4" width="519" height="1" uuid="a9da7427-1a7b-4984-bbb6-a04331045a60"/>
+			</line>
+			<staticText>
+				<reportElement x="339" y="14" width="100" height="20" uuid="757e1690-c3ca-4b80-9cff-b903dcdb2038"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:     Rs.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="444" y="9" width="106" height="30" uuid="72ebc4db-3f63-42f2-9caf-f0df7813f87c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_price_for_all_bookings}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="184" y="21" width="190" height="30" forecolor="#41A39B" uuid="701774bd-3687-414e-838f-820a4a286187"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Thank you Come again]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

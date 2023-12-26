@@ -1,0 +1,7 @@
+.LoginPagebackgroundColor{
+    -fx-background-color: linear-gradient(to right,#F2E3E3, #e3f6f5);
+}
+
+#alert{
+    -fx-background-color: linear-gradient(to right,#29ADB2, #435585);
+}

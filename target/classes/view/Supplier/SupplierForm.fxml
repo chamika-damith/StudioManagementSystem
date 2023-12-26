@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="supplierRoot" prefHeight="700.0" prefWidth="1330.0" style="-fx-background-color: #D3D5DA;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Supplier.SupplierFormController">
+   <children>
+      <Pane layoutX="29.0" layoutY="42.0" prefHeight="259.0" prefWidth="1286.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 13;">
+         <children>
+            <Label layoutX="27.0" layoutY="12.0" opacity="0.9" text="Supplier Details" textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtId" focusColor="#0040ff" labelFloat="true" layoutX="58.0" layoutY="68.0" onAction="#txtIdOnAction" prefHeight="25.0" prefWidth="324.0" promptText="Supplier Id *" />
+            <JFXTextField fx:id="txtName" focusColor="#0040ff" labelFloat="true" layoutX="481.0" layoutY="68.0" prefHeight="25.0" prefWidth="324.0" promptText="Name *" />
+            <JFXTextField fx:id="txtAddress" focusColor="#0040ff" labelFloat="true" layoutX="891.0" layoutY="68.0" prefHeight="25.0" prefWidth="324.0" promptText="Address *" />
+            <JFXTextField fx:id="txtMobile" focusColor="#0040ff" labelFloat="true" layoutX="280.0" layoutY="143.0" prefHeight="25.0" prefWidth="324.0" promptText="Mobile *" />
+            <JFXComboBox fx:id="cmbCategory" labelFloat="true" layoutX="729.0" layoutY="143.0" prefHeight="25.0" prefWidth="324.0" promptText="ItemCategory *" />
+            <Label layoutX="1082.0" layoutY="13.0" opacity="0.9" text="Supplier ID : " textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblSupId" layoutX="1189.0" layoutY="6.0" prefHeight="40.0" prefWidth="83.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="677.0" layoutY="215.0" onAction="#btnUpdateOnAction" prefHeight="28.0" prefWidth="91.0" style="-fx-background-color: #E7B10A; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9892328398384924">
+                           <color>
+                              <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="513.0" layoutY="215.0" onAction="#btnSaveOnAction" prefHeight="28.0" prefWidth="91.0" style="-fx-background-color: #5D9C59; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9892328398384924">
+                           <color>
+                              <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="29.0" layoutY="311.0" prefHeight="378.0" prefWidth="1286.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 13;">
+         <children>
+            <Label layoutX="27.0" layoutY="12.0" opacity="0.9" text="View Suppliers" textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblSupplier" layoutX="14.0" layoutY="58.0" prefHeight="310.0" prefWidth="1265.0" stylesheets="@../../Style/Table.css">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="83.20000457763672" text="Id" />
+                  <TableColumn fx:id="colName" prefWidth="298.40003967285156" text="Name" />
+                  <TableColumn fx:id="colAddress" prefWidth="321.59991455078125" text="Address" />
+                  <TableColumn fx:id="colMobile" prefWidth="196.0" text="Mobile" />
+                  <TableColumn fx:id="colCategory" prefWidth="247.9998779296875" text="Category" />
+                  <TableColumn fx:id="Action" prefWidth="113.60003662109375" text="Action" />
+               </columns>
+            </TableView>
+            <Pane layoutX="1036.0" layoutY="14.0" prefHeight="40.0" prefWidth="236.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 7;">
+               <children>
+                  <JFXTextField fx:id="txtCostSearchTable" focusColor="#0040ff" labelFloat="true" layoutX="35.0" layoutY="6.0" prefHeight="25.0" prefWidth="188.0" promptText="Search by Supplier Id or Name">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </JFXTextField>
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="9.0" layoutY="11.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Icon/search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Label layoutX="1236.0" layoutY="5.0" opacity="0.9" text="Suppliers" textFill="#22a390" underline="true">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="29.0" layoutY="8.0" prefHeight="28.0" prefWidth="124.0" style="-fx-background-color: #4A86E4; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Supplier Details" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.16470588743686676" green="0.7803921699523926" blue="0.615686297416687" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+   </children>
+</AnchorPane>

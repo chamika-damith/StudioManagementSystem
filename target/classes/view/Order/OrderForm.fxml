@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="OrderCartRoot" prefHeight="700.0" prefWidth="1330.0" style="-fx-background-color: #D3D5DA; -fx-background-radius: 4;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Order.OrderFormController">
+   <children>
+      <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="7.0" onAction="#btnorderFormOnAction" prefHeight="28.0" prefWidth="124.0" style="-fx-background-color: #4A86E4; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Order Details" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.16470588743686676" green="0.7803921699523926" blue="0.615686297416687" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="179.0" layoutY="7.0" onAction="#btnOrderTableOnAction" prefHeight="28.0" prefWidth="124.0" style="-fx-background-color: #618264; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="View Orders Table" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9892328398384924">
+                     <color>
+                        <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </JFXButton>
+      <Pane layoutX="12.0" layoutY="47.0" prefHeight="220.0" prefWidth="1307.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 13;">
+         <children>
+            <Label layoutX="13.0" layoutY="6.0" opacity="0.6" text="Order Details" textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbCustomerId" labelFloat="true" layoutX="62.0" layoutY="56.0" onAction="#cmbCustomerOnAction" prefHeight="25.0" prefWidth="204.0" promptText="Customer Id *" />
+            <JFXComboBox fx:id="cmbItemId" labelFloat="true" layoutX="359.0" layoutY="56.0" onAction="#cmbItemOnAction" prefHeight="25.0" prefWidth="204.0" promptText="Item Id *" />
+            <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="991.0" layoutY="56.0" onAction="#txtQtyOnAction" prefHeight="25.0" prefWidth="204.0" promptText="Qty :" />
+            <Label layoutX="1141.0" layoutY="14.0" text="Order Id - " textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="64.0" layoutY="100.0" opacity="0.92" text="Order Date" textFill="#3876bf" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="310.0" layoutY="99.0" opacity="0.92" text="Description" textFill="#3876bf" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="594.0" layoutY="100.0" opacity="0.92" text="Unit Price" textFill="#3876bf" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="852.0" layoutY="100.0" opacity="0.92" text="Qty On Hand" textFill="#3876bf" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="1099.0" layoutY="99.0" opacity="0.92" text="Customer Name" textFill="#3876bf" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="574.0" layoutY="186.0" onAction="#btnAddToCart" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: #F58840; -fx-background-radius: 10;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Add to cart" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9892328398384924">
+                           <color>
+                              <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblOrderId" layoutX="1223.0" layoutY="3.0" prefHeight="47.0" prefWidth="70.0">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCusName" layoutX="1109.0" layoutY="135.0" prefHeight="21.0" prefWidth="86.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblItemQty" layoutX="869.0" layoutY="135.0" prefHeight="25.0" prefWidth="99.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblItemPrice" layoutX="600.0" layoutY="135.0" prefHeight="25.0" prefWidth="106.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblItemDesc" layoutX="312.0" layoutY="135.0" prefHeight="25.0" prefWidth="163.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" layoutX="44.0" layoutY="135.0" prefHeight="25.0" prefWidth="163.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <MFXDatePicker fx:id="cmbDate" layoutX="690.0" layoutY="50.0" onAction="#cmbDateOnAction" prefHeight="38.0" prefWidth="204.0" promptText="orders date" />
+            <ImageView fitHeight="28.0" fitWidth="38.0" layoutX="580.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Icon/barcode.png" />
+               </image>
+            </ImageView>
+            <JFXButton buttonType="RAISED" layoutX="579.0" layoutY="56.0" onAction="#btnOpenScannerOnAction" prefHeight="25.0" prefWidth="28.0" ripplerFill="#00ffad" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Label layoutX="1258.0" layoutY="5.0" opacity="0.9" text="Orders" textFill="#22a390">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Pane layoutX="18.0" layoutY="277.0" prefHeight="375.0" prefWidth="1298.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 13;">
+         <children>
+            <Label layoutX="27.0" layoutY="14.0" opacity="0.6" text="View Cart" textFill="#22a390">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblCart" layoutX="14.0" layoutY="58.0" prefHeight="284.0" prefWidth="1274.0" stylesheets="@../../Style/Table.css">
+               <columns>
+                  <TableColumn fx:id="colItemId" prefWidth="112.79998397827148" text="Item Id" />
+                  <TableColumn fx:id="colDescription" prefWidth="426.40003967285156" text="Description" />
+                  <TableColumn fx:id="colDate" prefWidth="276.00006103515625" text="Order Date" />
+                  <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="183.99993896484375" text="Total Price" />
+                  <TableColumn fx:id="colQty" prefWidth="160.0" text="Qty" />
+                  <TableColumn fx:id="Action" prefWidth="112.7999267578125" text="Action" />
+               </columns>
+            </TableView>
+            <Pane layoutX="1040.0" layoutY="12.0" prefHeight="40.0" prefWidth="236.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 7;">
+               <children>
+                  <JFXTextField focusColor="#0040ff" labelFloat="true" layoutX="35.0" layoutY="6.0" prefHeight="25.0" prefWidth="188.0" promptText="Search by Item Id">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </JFXTextField>
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="9.0" layoutY="11.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Icon/search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <JFXButton buttonType="RAISED" layoutX="1069.0" layoutY="661.0" onAction="#btnPlaceOrderOnAction" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: Green; -fx-background-radius: 10;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Place Order" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9892328398384924">
+                     <color>
+                        <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="44.0" layoutY="661.0" opacity="0.9" text="Total = " textFill="#22a390">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" layoutX="131.0" layoutY="662.0" prefHeight="28.0" prefWidth="118.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="934.0" layoutY="661.0" onAction="#btnOrderPaymentOnAction" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: D83F31; -fx-background-radius: 10;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Make Payment" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9892328398384924">
+                     <color>
+                        <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="111.0" layoutY="668.0" text="Rs." />
+      <JFXButton buttonType="RAISED" layoutX="336.0" layoutY="7.0" onAction="#btnAddCustomerOnAction" prefHeight="28.0" prefWidth="124.0" style="-fx-background-color: FA7070; -fx-background-radius: 13;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Add Customer" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9892328398384924">
+                     <color>
+                        <Color red="0.13333334028720856" green="0.6431372761726379" blue="0.572549045085907" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1199.0" layoutY="661.0" onAction="#btnPrintReciptOnAction" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: #4A86E5; -fx-background-radius: 10;" styleClass="click-button" stylesheets="@../../Style/Button.css" text="Print Recipt" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1882352977991104" green="0.16862745583057404" blue="0.3803921639919281" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.16470588743686676" green="0.7803921699523926" blue="0.615686297416687" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,122 @@
+.table-view{
+    -fx-background-radius: 15;
+    -fx-background-color: transparent;
+    -fx-border-radius: 2;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #013a63;
+    -fx-background-radius: 15;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: black;
+    -fx-alignment: center;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #aecdf6;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-view .scroll-bar:vertical{
+    -fx-background-color: transparent;
+}
+
+.table-view .scroll-bar:horizontal{
+    -fx-opacity: 0;
+    -fx-background-color: black;
+    -fx-background-insets: 0;
+    -fx-padding: 0
+}
+
+.table-view .scroll-bar:vertical .increment-button,
+.table-view .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.table-view .scroll-bar:vertical .increment-button,
+.table-view .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.table-view .scroll-bar:vertical .thumb{
+    -fx-background-color: #2a9d8f;
+    -fx-background-radius: 10px;
+}
+.table-view .scroll-bar:vertical .thumb:hover{
+    -fx-opacity: 80%;
+}
+
+.table-view .scroll-bar:vertical .increment-arrow,
+.table-view .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent;
+}
+
+.table-view > .virtual-flow > .corner{
+    -fx-background-color: transparent;
+}
+
+.ActionBtn{
+    -fx-background-color:  red;
+    -fx-text-fill: white;
+    -fx-background-radius: 10px;
+    -fx-alignment: center;
+}
+.moreBtn{
+    -fx-background-color:  #7D7C7C;
+    -fx-text-fill: white;
+    -fx-background-radius: 9px;
+    -fx-alignment: center;
+    -fx-opacity: 80%;
+}
+
+.completeBtn{
+    -fx-background-color:  #0766AD;
+    -fx-text-fill: white;
+    -fx-background-radius: 9px;
+    -fx-alignment: center;
+    -fx-opacity: 80%;
+}
+
+.deleteBtn{
+    -fx-background-color:  red;
+    -fx-text-fill: white;
+    -fx-background-radius: 9px;
+    -fx-alignment: center;
+    -fx-opacity: 80%;
+}
+
+.statusBtn{
+    -fx-background-radius: 30px;
+    -fx-pref-height: 25px;
+    -fx-alignment: center;
+    -fx-opacity: 80%;
+}
+
+.ActionBtn:hover{
+    -fx-opacity: 80%;
+}
+
+.table-view .arrow{
+    -fx-arrows-visible: true;
+    -fx-mark-color:white;
+}
+
+.table-view .table-row-cell:selected *{
+    -fx-font-weight: bold;
+    -fx-text-fill:rgb(0,0,0);
+}
