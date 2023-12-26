@@ -5,10 +5,8 @@ import lombok.*;
 import java.util.Date;
 
 @NoArgsConstructor
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
-@ToString
 
 public class BookingDto {
     private int bookingId;

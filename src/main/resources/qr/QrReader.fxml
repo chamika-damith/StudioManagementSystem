@@ -5,20 +5,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.qr.QrReaderController">
+<AnchorPane fx:id="root" prefHeight="303.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.qr.QrReaderController">
    <children>
-      <AnchorPane fx:id="mainPanel" layoutX="7.0" layoutY="8.0" prefHeight="339.0" prefWidth="368.0" style="-fx-background-color: black;">
+      <AnchorPane fx:id="mainPanel" layoutX="7.0" layoutY="8.0" prefHeight="250.0" prefWidth="368.0" style="-fx-background-color: black;">
          <children>
             <AnchorPane fx:id="miniPanel" layoutX="22.0" layoutY="14.0" prefHeight="219.0" prefWidth="327.0" />
          </children>
       </AnchorPane>
-      <Label fx:id="txtLable" layoutX="130.0" layoutY="365.0" prefHeight="25.0" prefWidth="128.0" />
-      <JFXButton fx:id="btnStart" buttonType="RAISED" layoutX="17.0" layoutY="355.0" onAction="#StartOnAction" prefHeight="32.0" prefWidth="64.0" ripplerFill="#21dbc0" style="-fx-border-color: black; -fx-background-radius: 9;" styleClass="click-button" stylesheets="@../Style/Button.css" text="Start">
+      <Label fx:id="txtLable" layoutX="128.0" layoutY="266.0" prefHeight="25.0" prefWidth="128.0" />
+      <JFXButton fx:id="btnStart" buttonType="RAISED" layoutX="17.0" layoutY="263.0" onAction="#StartOnAction" prefHeight="32.0" prefWidth="64.0" ripplerFill="#21dbc0" style="-fx-border-color: black; -fx-background-radius: 9;" styleClass="click-button" stylesheets="@../Style/Button.css" text="Start">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnEnd" buttonType="RAISED" layoutX="304.0" layoutY="355.0" onAction="#EndOnAction" prefHeight="32.0" prefWidth="64.0" ripplerFill="#21dbc0" style="-fx-border-color: black; -fx-background-radius: 9;" styleClass="click-button" stylesheets="@../Style/Button.css" text="End">
+      <JFXButton fx:id="btnEnd" buttonType="RAISED" layoutX="304.0" layoutY="263.0" onAction="#EndOnAction" prefHeight="32.0" prefWidth="64.0" ripplerFill="#21dbc0" style="-fx-border-color: black; -fx-background-radius: 9;" styleClass="click-button" stylesheets="@../Style/Button.css" text="End">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
